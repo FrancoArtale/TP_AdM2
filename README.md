@@ -9,7 +9,7 @@ Los servicios que se usaron son:
 - [MinIO](https://min.io/)
 - Base de datos relacional [PostgreSQL](https://www.postgresql.org/)
 
-![Diagrama de servicios](servicio.jpg)
+![Diagrama de servicios](Servicio.jpg)
 
 Buckets utilizados (no se agregan nuevos):
 
