@@ -63,13 +63,9 @@ u otras reglas que eviten las conexiones).
 1.   Utilizar el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para cargar el modelo a MLflow. Este notebook realiza los siguientes pasos:
    
    a.   Carga los datos a un dataframe de pandas.
-   
    b.   Se hace una preparación de los datos.
-   
    c.   Se entrena el modelo.
-   
    d.   Se calculan algunas métricas del modelo.
-   
    e.   Se almacena el modelo y las métricas en Mlflow, con los siguientes pasos:
         1.   Se crea un experimento.
         2.   Se crea un run.
