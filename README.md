@@ -61,19 +61,25 @@ u otras reglas que eviten las conexiones).
 ## Uso
 
 1.   Utilizar el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para cargar el modelo a MLflow. Este notebook realiza los siguientes pasos:
+   
    a.   Carga los datos a un dataframe de pandas.
+   
    b.   Se hace una preparación de los datos.
+   
    c.   Se entrena el modelo.
+   
    d.   Se calculan algunas métricas del modelo.
+   
    e.   Se almacena el modelo y las métricas en Mlflow, con los siguientes pasos:
+   
         1.   Se crea un experimento.
         2.   Se crea un run.
         3.   Dentro de este run se almacenan las métricas y el modelo.
         4.   Se crea un nuevo run y se registra el modelo con la etiqueta “Champion”, esta   etiqueta la usaremos para cargar el modelo cuando lo utilicemos en la API.
 
-2.   Para realizar una busqueda de hiperparametros se utiliza el archivo notebook_example/hyperparameter_mlflow.py. Se registra el modelo y sus métricas en Mlflow, y además, se registra el modelo en el registro de modelos de Mlflow.
+3.   Para realizar una busqueda de hiperparametros se utiliza el archivo notebook_example/hyperparameter_mlflow.py. Se registra el modelo y sus métricas en Mlflow, y además, se registra el modelo en el registro de modelos de Mlflow.
 
-3.   Uso de la API: Se utiliza el modelo de aprendizaje de máquina 1, se toma el artefacto de Mlflow y lo expone para realizar predicciones (por esta razón, para probar la API hace falta primer correr el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para tener disponible el modelo en mlflow). Formas para probar el modelo:
+4.   Uso de la API: Se utiliza el modelo de aprendizaje de máquina 1, se toma el artefacto de Mlflow y lo expone para realizar predicciones (por esta razón, para probar la API hace falta primer correr el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para tener disponible el modelo en mlflow). Formas para probar el modelo:
    a.   Por medio de la UI.
         1.   Acceder a http://localhost:8800/docs (hay que tener el contenedor corriendo).
         2.   Usar el metodo POST.
@@ -81,7 +87,7 @@ u otras reglas que eviten las conexiones).
         1.   Correr el comando uvicorn app:app --host 0.0.0.0 --port 8000 en el directorio donde esta el archivo app.py.
         2.   Usar el notebook dockerfile/fastapi/testing_api.ipynb
 
-4.   En la carpeta dags tenemos un archivo .py que ejecuta un proceso ETL. Los pasos realizados son:
+5.   En la carpeta dags tenemos un archivo .py que ejecuta un proceso ETL. Los pasos realizados son:
    a.   Extract: obtiene el los datos desde un archivo .csv y almacena estos datos crudos en el bucket “data” de minio, también se almacena un archivo .JSON con datos del            dataset. Se hace seguimiento en Mlflow de esta parte, se almacenan algunos datos que se considerarán de interés.
    b.   Transform: Realiza limpieza y feature engineering, divide el dataset y lo almacena de el mismo bucket, en archivos separados.
    c.   Load: Cargamos los datos y mostramos las dimensiones.
