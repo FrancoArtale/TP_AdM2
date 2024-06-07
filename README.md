@@ -82,8 +82,8 @@ u otras reglas que eviten las conexiones).
         2.   Usar el notebook dockerfile/fastapi/testing_api.ipynb
 
 4.   En la carpeta dags tenemos un archivo .py que ejecuta un proceso ETL. Los pasos realizados son:
-     a.   Extract: obtiene el los datos desde un archivo .csv y almacena estos datos crudos en el bucket “data” de minio, también se almacena un archivo .JSON con datos del            dataset. Se hace seguimiento en Mlflow de esta parte, se almacenan algunos datos que se considerarán de interés.
-     b.   Transform: Realiza limpieza y feature engineering, divide el dataset y lo almacena de el mismo bucket, en archivos separados.
-     c.   Load: Cargamos los datos y mostramos las dimensiones.
+   a.   Extract: obtiene el los datos desde un archivo .csv y almacena estos datos crudos en el bucket “data” de minio, también se almacena un archivo .JSON con datos del            dataset. Se hace seguimiento en Mlflow de esta parte, se almacenan algunos datos que se considerarán de interés.
+   b.   Transform: Realiza limpieza y feature engineering, divide el dataset y lo almacena de el mismo bucket, en archivos separados.
+   c.   Load: Cargamos los datos y mostramos las dimensiones.
               
 
