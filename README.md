@@ -76,7 +76,18 @@ u otras reglas que eviten las conexiones).
 3.   Uso de la API: Se utiliza el modelo de aprendizaje de máquina 1, se toma el artefacto de Mlflow y lo expone para realizar predicciones (por esta razón, para probar la API hace falta primer correr el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para tener disponible el modelo en mlflow). Formas para probar el modelo:
    - Por medio de la UI.
       - Acceder a http://localhost:8800/docs (hay que tener el contenedor corriendo).
-      - Usar el metodo POST.   
+      - Usar el metodo POST.
+        ![Metodo POST](POST.jpg)
+      - Dar en el botón Try it out.
+        ![Botón Try it out](Boton_try.jpg)
+      - Ingresar los datos para realizar la predicción (formato de diccionario).
+        ![Botón Try it out](dictionary.jpg)
+      - Para obtener estos diccionario de forma rápida se puede usar el codigo en el notebook aprMaqI_CEIA_co14 (eliminar la ultima coma que genera este codigo).
+        ![Botón Try it out](notebook.jpg)
+      - Dar al botón Execute.
+        ![Botón Try it out](execute.jpg)
+      - Obtenemos la predicción.
+        ![Botón Try it out](respeusta.jpg)
    - A través del notebook dockerfile/fastapi/testing_api.ipynb.
       - Correr el comando uvicorn app:app --host 0.0.0.0 --port 8000 en el directorio donde esta el archivo app.py.
       - Usar el notebook dockerfile/fastapi/testing_api.ipynb.
