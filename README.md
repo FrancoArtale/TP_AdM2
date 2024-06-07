@@ -71,7 +71,6 @@ u otras reglas que eviten las conexiones).
    d.   Se calculan algunas métricas del modelo.
    
    e.   Se almacena el modelo y las métricas en Mlflow, con los siguientes pasos:
-   
         1.   Se crea un experimento.
         2.   Se crea un run.
         3.   Dentro de este run se almacenan las métricas y el modelo.
