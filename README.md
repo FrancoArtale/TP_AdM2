@@ -61,7 +61,7 @@ u otras reglas que eviten las conexiones).
 ## Uso
 
 1.   Utilizar el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para cargar el modelo a MLflow. Este notebook realiza los siguientes pasos:
-2.   
+   
    a. Carga los datos a un dataframe de pandas.
 
    b. Se hace una preparación de los datos.
@@ -79,16 +79,21 @@ u otras reglas que eviten las conexiones).
 4.   Para realizar una busqueda de hiperparametros se utiliza el archivo notebook_example/hyperparameter_mlflow.py. Se registra el modelo y sus métricas en Mlflow, y además, se registra el modelo en el registro de modelos de Mlflow.
 
 5.   Uso de la API: Se utiliza el modelo de aprendizaje de máquina 1, se toma el artefacto de Mlflow y lo expone para realizar predicciones (por esta razón, para probar la API hace falta primer correr el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para tener disponible el modelo en mlflow). Formas para probar el modelo:
-   a.   Por medio de la UI.
-        1.   Acceder a http://localhost:8800/docs (hay que tener el contenedor corriendo).
-        2.   Usar el metodo POST.
-   b.   A través del notebook dockerfile/fastapi/testing_api.ipynb.
-        1.   Correr el comando uvicorn app:app --host 0.0.0.0 --port 8000 en el directorio donde esta el archivo app.py.
-        2.   Usar el notebook dockerfile/fastapi/testing_api.ipynb
+   
+   a. Por medio de la UI.
+      - Acceder a http://localhost:8800/docs (hay que tener el contenedor corriendo).
+      - Usar el metodo POST.
+      
+   b. A través del notebook dockerfile/fastapi/testing_api.ipynb.
+      - Correr el comando uvicorn app:app --host 0.0.0.0 --port 8000 en el directorio donde esta el archivo app.py.
+      - Usar el notebook dockerfile/fastapi/testing_api.ipynb.
 
-6.   En la carpeta dags tenemos un archivo .py que ejecuta un proceso ETL. Los pasos realizados son:
-   a.   Extract: obtiene el los datos desde un archivo .csv y almacena estos datos crudos en el bucket “data” de minio, también se almacena un archivo .JSON con datos del            dataset. Se hace seguimiento en Mlflow de esta parte, se almacenan algunos datos que se considerarán de interés.
-   b.   Transform: Realiza limpieza y feature engineering, divide el dataset y lo almacena de el mismo bucket, en archivos separados.
-   c.   Load: Cargamos los datos y mostramos las dimensiones.
+7.   En la carpeta dags tenemos un archivo .py que ejecuta un proceso ETL. Los pasos realizados son:
+   
+   a. Extract: obtiene el los datos desde un archivo .csv y almacena estos datos crudos en el bucket “data” de minio, también se almacena un archivo .JSON con datos del            dataset. Se hace seguimiento en Mlflow de esta parte, se almacenan algunos datos que se considerarán de interés.
+   
+   b. Transform: Realiza limpieza y feature engineering, divide el dataset y lo almacena de el mismo bucket, en archivos separados.
+   
+   c. Load: Cargamos los datos y mostramos las dimensiones.
               
 
