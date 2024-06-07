@@ -61,16 +61,15 @@ u otras reglas que eviten las conexiones).
 ## Uso
 
 1.   Utilizar el notebook notebook_example/aprMaqI_CEIA_co14.ipynb para cargar el modelo a MLflow. Este notebook realiza los siguientes pasos:
-   
-   a.   Carga los datos a un dataframe de pandas.
-   b.   Se hace una preparación de los datos.
-   c.   Se entrena el modelo.
-   d.   Se calculan algunas métricas del modelo.
-   e.   Se almacena el modelo y las métricas en Mlflow, con los siguientes pasos:
-        1.   Se crea un experimento.
-        2.   Se crea un run.
-        3.   Dentro de este run se almacenan las métricas y el modelo.
-        4.   Se crea un nuevo run y se registra el modelo con la etiqueta “Champion”, esta   etiqueta la usaremos para cargar el modelo cuando lo utilicemos en la API.
+   a. Carga los datos a un dataframe de pandas.
+   b. Se hace una preparación de los datos.
+   c. Se entrena el modelo.
+   d. Se calculan algunas métricas del modelo.
+   e. Se almacena el modelo y las métricas en Mlflow, con los siguientes pasos:
+      1. Se crea un experimento.
+      2. Se crea un run.
+      3. Dentro de este run se almacenan las métricas y el modelo.
+      4. Se crea un nuevo run y se registra el modelo con la etiqueta “Champion”, esta   etiqueta la usaremos para cargar el modelo cuando lo utilicemos en la API.
 
 3.   Para realizar una busqueda de hiperparametros se utiliza el archivo notebook_example/hyperparameter_mlflow.py. Se registra el modelo y sus métricas en Mlflow, y además, se registra el modelo en el registro de modelos de Mlflow.
 
