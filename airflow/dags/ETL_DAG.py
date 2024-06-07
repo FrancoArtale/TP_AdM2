@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from airflow import DAG
+from airflow.utils.dates import days_ago
 from airflow.operators.python_operator import PythonOperator
 import pandas as pd
 import numpy as np
@@ -213,7 +214,7 @@ default_args = {
     'depends_on_past': False,
     'schedule_interval': None,
     'retries': 1,
-    'start_date': datetime(2024, 6, 6),
+    'start_date': days_ago(2),
     'retry_delay': timedelta(minutes=5),
     'dagrun_timeout': timedelta(minutes=15)
 }
